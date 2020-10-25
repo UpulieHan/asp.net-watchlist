@@ -30,8 +30,15 @@ namespace Watchlist
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            //Setting up the Identity service(changed IdentityUser to ApplicationUser )
+            //This enables .NET Identity to use ApplicationUser class for all Identity processes and services (configuring UserManger, Sign in Manager)
+            services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+            options.User.RequireUniqueEmail = false
+            )
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
+
             services.AddControllersWithViews();
             services.AddRazorPages();
         }

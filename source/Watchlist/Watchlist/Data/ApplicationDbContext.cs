@@ -12,5 +12,19 @@ namespace Watchlist.Data
             : base(options)
         {
         }
+
+        //As many-to-many relationship has no ability to auto-migrate we have to yse the Fluent API
+        //Fluent API is used to give EF instructions on building,modifying the DB
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<UserMovie>()
+                .HasKey(t => new { t.UserId, t.MovieId });
+        }
+
+        //Adding DbSet objects for Movies and UserMovies classes
+        //Didn't add ApplicationUser class because it's already an AspNetUsers table in the database (anything you add to ApplicationUser will automatically translated to AspNetUsers table in the database)
+        public DbSet<Movie> Movies { get; set; }
+        public DbSet<UserMovie> UserMovies { get; set; }
     }
 }
