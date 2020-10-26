@@ -32,3 +32,16 @@ for an (empty view)
 6.Make sure 'Create as partial view' is not selected.
 7.Check 'reference script libraries' and 'use a layout page'
 8.Add
+
+Changes to views can be updated while the app is running.
+But changes to controllers/model can only take place after stopping debugging and starting normal development state.
+But to enable this feature, you need to
+1.Open developer shell (Ctrl + `), type 'dotnet add <name-of-the-project> package Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation -v 3.1.0',press enter
+2.In startup.cs under the ConfigureServices method, change services.AddRazorPages(); to services.AddRazorPages().AddRazorRuntimeCompilation();
+
+To view the DB created,
+1.On VS, View > SQL Server Object Explorer
+2. To data on each individual tables, right click on the table > View Data
+3. To see the structure of a table, right click on the table > View Code
+
+

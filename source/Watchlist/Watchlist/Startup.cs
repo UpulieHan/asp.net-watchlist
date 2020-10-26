@@ -41,7 +41,7 @@ namespace Watchlist
                 .AddDefaultTokenProviders();
 
             services.AddControllersWithViews();
-            services.AddRazorPages();
+            services.AddRazorPages().AddRazorRuntimeCompilation();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -74,5 +74,8 @@ namespace Watchlist
                 endpoints.MapRazorPages();
             });
         }
+
+
+
     }
 }
