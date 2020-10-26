@@ -20,6 +20,12 @@ namespace Watchlist.Controllers
 
         public IActionResult Index()
         {
+            //to see if the user is logged in
+            //User object is static
+            if (User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Index", "Watchlist");
+            }
             return View();
         }
 
