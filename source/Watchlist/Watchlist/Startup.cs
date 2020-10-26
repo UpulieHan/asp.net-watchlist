@@ -34,8 +34,9 @@ namespace Watchlist
             //Setting up the Identity service(changed IdentityUser to ApplicationUser )
             //This enables .NET Identity to use ApplicationUser class for all Identity processes and services (configuring UserManger, Sign in Manager)
             services.AddIdentity<ApplicationUser, IdentityRole>(options =>
-            options.User.RequireUniqueEmail = false
-            )
+            {
+                options.User.RequireUniqueEmail = false;
+            })
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
