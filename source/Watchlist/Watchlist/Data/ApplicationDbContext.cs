@@ -17,6 +17,7 @@ namespace Watchlist.Data
         //Fluent API is used to give EF instructions on building,modifying the DB
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //to map keys
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<UserMovie>()
                 .HasKey(t => new { t.UserId, t.MovieId });

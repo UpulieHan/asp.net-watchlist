@@ -38,7 +38,9 @@ namespace Watchlist
                 options.User.RequireUniqueEmail = false;
             })
                 .AddEntityFrameworkStores<ApplicationDbContext>()
-                .AddDefaultTokenProviders();
+                .AddDefaultTokenProviders()
+                .AddDefaultUI();
+
 
             services.AddControllersWithViews();
             services.AddRazorPages().AddRazorRuntimeCompilation();
