@@ -4,6 +4,8 @@
     ViewData["Title"] = "Create";
 }
 
+@*The Edit form and the Create form are nearly identical*@
+
 <h1>Create</h1>
 
 <h4>Movie</h4>
@@ -28,9 +30,13 @@
         </form>
     </div>
 </div>
+@*<div>
+        <a asp-action="Index">Back to List</a>
+    </div>*@
 
+@*you could change this "Back to List" to a cancel button as*@
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="btn btn-primary">Back to List</a>
 </div>
 
 @section Scripts {
