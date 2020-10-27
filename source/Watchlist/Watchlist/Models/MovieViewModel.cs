@@ -5,7 +5,8 @@ using System.Threading.Tasks;
 
 namespace Watchlist.Models
 {
-    //A View model
+    //A View model class
+    //Custom built to render specific information to a view
     //This class doesn't represent a specific entity in the DB but rather a mixture of elements from different ones
     //Used to make the UserMovies table readable and user-friendly
     public class MovieViewModel

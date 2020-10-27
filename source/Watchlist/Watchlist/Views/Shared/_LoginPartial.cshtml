@@ -2,6 +2,11 @@
 @using Watchlist.Data
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
+@*These are comments*@
+@*Razor code = C# code used to render the view*@
+@*Rendering of the view occurs in the server (so it's hidden from potential hackers)*@
+@*Therefore SignInManager, UserManager objects are safely included and resulting page only consists of HTML*@
+@*We use @inject to inject such objects to the view*@
 
 <ul class="navbar-nav">
     @if (SignInManager.IsSignedIn(User))

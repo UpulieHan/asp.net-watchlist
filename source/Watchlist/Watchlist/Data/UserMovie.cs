@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace Watchlist.Data
 {
+    //A data model class (used to represent DB entitities)
+    //This class is used to represent the many-to-many relationships (the join table) in the relational DB
+    //figuratively sits between the 2 tables and contains records and PKs of both
     public class UserMovie
     {
         //UserId and MovieId are composite keys

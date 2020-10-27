@@ -13,6 +13,7 @@ namespace Watchlist.Controllers
     {
         private readonly ApplicationDbContext _context;
 
+        //access the database context through ASP.NET's dependency injection
         public MoviesController(ApplicationDbContext context)
         {
             _context = context;
