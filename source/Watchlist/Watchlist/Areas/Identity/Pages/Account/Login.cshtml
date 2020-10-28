@@ -39,7 +39,8 @@
                                 <hr>
                                 <div class="form-group">
                                     <p class="text-center">
-                                        <a id="forgot-password" asp-page="/Account/ForgotPassword">Forgot your password?</a>
+                                        @*Can implement this further to navigate to /Account/ForgotPassword if needed, but for now,*@
+                                        <a id="forgot-password" asp-controller="Home" asp-action="Privacy">Forgot your password?</a>
                                     </p>
                                     <p class="text-center">
                                         <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
