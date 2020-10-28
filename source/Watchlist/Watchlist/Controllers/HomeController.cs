@@ -22,10 +22,10 @@ namespace Watchlist.Controllers
         {
             //to see if the user is logged in
             //User object is static
-            if (User.Identity.IsAuthenticated)
-            {
-                return RedirectToAction("Index", "Watchlist");
-            }
+            //if (User.Identity.IsAuthenticated)
+            //{
+            //    return RedirectToAction("Index", "Watchlist");
+            //}
             return View();
         }
 
