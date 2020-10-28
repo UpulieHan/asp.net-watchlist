@@ -8,8 +8,4 @@ Bootstrap template https://github.com/StartBootstrap/startbootstrap-sb-admin-2
 
 
 
-Hosted at :ghost: https://watchlist20201028202112.azurewebsites.net/
-
-
-
 
