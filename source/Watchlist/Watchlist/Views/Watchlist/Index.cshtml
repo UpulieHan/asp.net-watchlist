@@ -3,94 +3,85 @@
 @{
     ViewData["Title"] = "Index";
 }
-
-<div class="container mt-5">
-    <div class="row">
-        <div class="card shadow mb-4">
-            <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
-            </div>
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                        <thead>
-                            <tr>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.MovieId)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Title)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Year)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.InWatchlist)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Watched)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Rating)
-                                </th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (var item in Model)
-                            {
+<div id="content-wrapper" class="d-flex flex-column">
+    <div id="content">
+        <partial name="_LoginPartial" />
+        <div class="container-fluid mt-5">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
                                 <tr>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.MovieId)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Title)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Year)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.InWatchlist)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Watched)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Rating)
-                                    </td>
-                                    <td>
-                                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-                                    </td>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.MovieId)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Title)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Year)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.InWatchlist)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Watched)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Rating)
+                                    </th>
+                                    <th></th>
                                 </tr>
-                            }
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.MovieId)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Title)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Year)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.InWatchlist)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Watched)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Rating)
+                                        </td>
+                                        <td>
+                                            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                                            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                                            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
+            <p>
+                <a class="btn btn-primary btn-icon-split" asp-action="Create">
+                    <span class="icon text-white-150">
+                        <i class="fas fa-flag"></i>
+                    </span>
+                    <span class="text">Create New</span>
+                </a>
+            </p>
         </div>
     </div>
-    <div class="row">
-        <p>
-            <a class="btn btn-primary btn-icon-split" asp-action="Create">
-                <span class="icon text-white-150">
-                    <i class="fas fa-flag"></i>
-                </span>
-                <span class="text">Create New</span>
-            </a>
-        </p>
-    </div>
 </div>
-
-
-
-
-
-
-
-
-
 
 
 

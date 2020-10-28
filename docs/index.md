@@ -106,4 +106,9 @@ When building the view model for a particular view,
 Although the model is often built in the controller action and passed to the view as a parameter, 
 the type defined in the action must match the type defined in the view with the  @model  command.
 
+To override the default views from Identity follow the following tutorial,
+https://andrewlock.net/customising-aspnetcore-identity-without-editing-the-pagemodel/
+
+
+
 
