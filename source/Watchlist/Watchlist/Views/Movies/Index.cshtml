@@ -4,51 +4,70 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Year)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.InWatchlist)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Year)
-                </td>
-                <td>
-                    @*@Html.DisplayFor(modelItem => item.InWatchlist)*@
-                    <button id="@item.MovieId" data-val="@item.InWatchlist" class="btn">
-                        @(item.InWatchlist ? " - " : " + ")
-                    </button>
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.MovieId">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.MovieId">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.MovieId">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+<div id="content-wrapper" class="d-flex flex-column">
+    <div id="content">
+        <partial name="_LoginPartial" />
+        <div class="container-fluid mt-5">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Available Movies</h6>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Title)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Year)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.InWatchlist)
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Title)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Year)
+                                        </td>
+                                        <td>
+                                            @*@Html.DisplayFor(modelItem => item.InWatchlist)*@
+                                            <button id="@item.MovieId" data-val="@item.InWatchlist" class="btn">
+                                                @(item.InWatchlist ? " - " : " + ")
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <a asp-action="Edit" asp-route-id="@item.MovieId">Edit</a> |
+                                            <a asp-action="Details" asp-route-id="@item.MovieId">Details</a> |
+                                            <a asp-action="Delete" asp-route-id="@item.MovieId">Delete</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <p>
+                <a class="btn btn-primary btn-icon-split" asp-action="Create">
+                    <span class="icon text-white-150">
+                        <i class="fas fa-flag"></i>
+                    </span>
+                    <span class="text">Create New</span>
+                </a>
+            </p>
+        </div>
+    </div>
+</div>
 
 
 @section Scripts {
