@@ -38,10 +38,12 @@ namespace Watchlist
                 options.User.RequireUniqueEmail = false;
             })
                 .AddEntityFrameworkStores<ApplicationDbContext>()
-                .AddDefaultTokenProviders();
+                .AddDefaultTokenProviders()
+                .AddDefaultUI();
+
 
             services.AddControllersWithViews();
-            services.AddRazorPages();
+            services.AddRazorPages().AddRazorRuntimeCompilation();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -66,6 +68,15 @@ namespace Watchlist
             app.UseAuthentication();
             app.UseAuthorization();
 
+            //to change the endpoint of the application
+            //app.UseMvc(configureRoutes =>
+            //{
+            //    configureRoutes.MapRoute(
+            //        name: "default",
+            //        template: "{controller=Home}/{action=Index}/{id}"
+            //        );
+            //});
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
@@ -74,5 +85,8 @@ namespace Watchlist
                 endpoints.MapRazorPages();
             });
         }
+
+
+
     }
 }
