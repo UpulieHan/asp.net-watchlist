@@ -107,8 +107,12 @@ Although the model is often built in the controller action and passed to the vie
 the type defined in the action must match the type defined in the view with the  @model  command.
 
 To override the default views from Identity follow the following tutorial,
-https://andrewlock.net/customising-aspnetcore-identity-without-editing-the-pagemodel/
+https://andrewlock.net/customising-aspnetcore-identity-without-editing-the-pagemodel/ 
 
-
+In the case of starting to update the app once again,
+"ASPNETCORE_ENVIRONMENT": "Development"
+to
+"ASPNETCORE_ENVIRONMENT": "Development" 
+in the launchSettings.json file
 
 
