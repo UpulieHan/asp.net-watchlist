@@ -29,7 +29,7 @@ namespace Watchlist
         {
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+                    Configuration.GetConnectionString("AzureConnection")));
 
             //Setting up the Identity service(changed IdentityUser to ApplicationUser )
             //This enables .NET Identity to use ApplicationUser class for all Identity processes and services (configuring UserManger, Sign in Manager)
