@@ -6,47 +6,59 @@
 
 @*The Edit form and the Create form are nearly identical*@
 
-<h1>Edit</h1>
-
-<h4>Movie</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            @*this tage indicates where a summary of the validation errors will display.*@
-            @*asp-validation-summary values are,*@
-            @*All-,will display both propery and model validation messages*@
-            @*ModelOnly-,will only display model level validation messages*@
-            @*None*- the tag will do nothing*@
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="Title" class="control-label"></label>
-                <input asp-for="Title" class="form-control" />
-                @*All data entry errors will be indicated by the red text Eg: if a required field is kept empty*@
-                <span asp-validation-for="Title" class="text-danger"></span>
+<body class="bg-gradient-primary">
+    <div class="container">
+        <div class="card o-hidden border-0 shadow-lg my-5">
+            <div class="card-body p-0">
+                <!-- Nested Row within Card Body -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4">Edit Movie</h1>
+                            </div>
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <form class="user" asp-action="Edit">
+                                @*this tage indicates where a summary of the validation errors will display.*@
+                                @*asp-validation-summary values are,*@
+                                @*All-,will display both propery and model validation messages*@
+                                @*ModelOnly-,will only display model level validation messages*@
+                                @*None*- the tag will do nothing*@
+                                <input type="hidden" asp-for="Id" />
+                                <div class="form-group row">
+                                    <div class="col-sm-12 mb-6 mb-sm-0">
+                                        <input type="text" class="form-control form-control-user" asp-for="Title" placeholder="Title">
+                                        @*All data entry errors will be indicated by the red text Eg: if a required field is kept empty*@
+                                        <span asp-validation-for="Title" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-12">
+                                        <input type="number" class="form-control form-control-user" asp-for="Year" placeholder="Year">
+                                        <span asp-validation-for="Year" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-user btn-block">Save</button>
+                                <hr>
+                            </form>
+                            <a class="btn btn-primary btn-circle" role="button" asp-action="Index"><i class="fas fa-arrow-left"></i></a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Year" class="control-label"></label>
-                <input asp-for="Year" class="form-control" />
-                @*All data entry errors will be indicated by the red text*@
-                <span asp-validation-for="Year" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
-</div>
 
-@*<div>
-        <a asp-action="Index">Back to List</a>
-    </div>*@
+    <!-- Bootstrap core JavaScript-->
+    <script src="~/vendor/jquery/jquery.min.js"></script>
+    <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-@*you could change this "Back to List" to a cancel button as*@
-<div>
-    <a asp-action="Index" class="btn btn-primary">Back to List</a>
-</div>
+    <!-- Core plugin JavaScript-->
+    <script src="~/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="~/js/sb-admin-2.min.js"></script>
+</body>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
