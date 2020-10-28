@@ -34,7 +34,6 @@
                                     <th>
                                         @Html.DisplayNameFor(model => model.Rating)
                                     </th>
-                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -58,11 +57,6 @@
                                         </td>
                                         <td>
                                             @Html.DisplayFor(modelItem => item.Rating)
-                                        </td>
-                                        <td>
-                                            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                                            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                                            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
                                         </td>
                                     </tr>
                                 }
